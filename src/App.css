@@ -151,3 +151,52 @@ button:active {
   color: #777;
 }
 
+.infoSection {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.infoSection h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.infoSection p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* GUIDE PAGE */
+
+.guideWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.guideCard {
+  max-width: 720px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 26px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.guideCard h1 {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.guideCard h2 {
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.guideCard p {
+  line-height: 1.6;
+  color: #555;
+}
