@@ -85,8 +85,19 @@ function App() {
 
   return (
     <div className="container">
-      <div style={{textAlign: "center", fontSize: "32px"}}>🍟</div>
-      <h1>FrySwap</h1>
+      
+      <div style={{textAlign: "center", marginBottom: "10px"}}>
+  <div style={{
+    display: "inline-block",
+    background: "#FFE1D6",
+    padding: "12px 16px",
+    borderRadius: "999px",
+    fontSize: "22px"
+  }}>
+    🍟 FrySwap
+  </div>
+</div>
+
       <p>Convert oven instructions into perfect air fryer settings</p>
 
       {notice && <div className="notice">{notice}</div>}
