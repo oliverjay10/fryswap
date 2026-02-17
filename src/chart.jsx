@@ -30,8 +30,9 @@ export default function Chart() {
         </table>
 
         <p style={{ marginTop: "20px" }}>
-          For exact conversions, try the FrySwap converter.
-        </p>
+  Need exact times? Try the <a href="/">oven to air fryer converter </a>
+  for a quick calculation.
+</p>
 
       </div>
     </div>

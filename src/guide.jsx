@@ -26,9 +26,11 @@ export default function Guide() {
         </p>
 
         <h2>Try the converter</h2>
-        <p>
-          Head back to FrySwap to instantly calculate your air fryer settings.
-        </p>
+       <p>
+  You can use the FrySwap converter to quickly get a starting point for
+  your cooking times, or check the <a href="/chart">air fryer temperature chart </a>
+  for common foods.
+</p>
 
       </div>
     </div>
