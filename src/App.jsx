@@ -19,15 +19,26 @@ function App() {
       return;
     }
 
-    let airTemp = ovenTemp - 20;
-    let airTime = Math.round(ovenTime * 0.8);
+   let multiplier = 0.8
 
-    switch(foodType) {
-      case "chicken": airTime += 5; break;
-      case "fries": airTime -= 2; break;
-      case "fish": airTime -= 3; break;
-      case "vegetables": airTime -= 5; break;
-    }
+switch(foodType) {
+  case "chicken":
+    multiplier = 0.9
+    break
+  case "fries":
+    multiplier = 0.75
+    break
+  case "fish":
+    multiplier = 0.72
+    break
+  case "vegetables":
+    multiplier = 0.7
+    break
+}
+
+let airTime = Math.round(ovenTime * multiplier)
+let airTemp = ovenTemp - 20
+
 
     setResult(`Temp: ${airTemp}°C, Time: ${airTime} minutes. Flip/shake halfway.`);
     setTimer(airTime * 60);
@@ -121,6 +132,10 @@ function App() {
 
       <h2>Air Fryer Result:</h2>
       <p className="result">{result}</p>
+      <p style={{fontSize: "13px", color: "#666", textAlign: "center"}}>
+  Air fryers vary by model — check food a few minutes early.
+</p>
+
 
       {timer && (
         <>
