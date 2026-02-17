@@ -15,9 +15,12 @@ function App() {
     const foodType = document.getElementById("foodType").value;
 
     if (!ovenTemp || !ovenTime) {
-      setNotice("Please enter temperature and time")
-      return;
-    }
+  setNotice("Please enter temperature and time")
+  return;
+} else {
+  setNotice("") // clears the error when inputs are valid
+}
+
 
    let multiplier = 0.8
 
