@@ -152,7 +152,7 @@ function App() {
                 <div className="resultHint">Flip or shake halfway through</div>
               </div>
             )}
-
+<br></br>
             <p style={{ fontSize: "13px", color: "#666", textAlign: "center" }}>
               Air fryers vary by model — check food a few minutes early.
             </p>
