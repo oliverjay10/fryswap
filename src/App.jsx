@@ -95,19 +95,12 @@ let airTemp = ovenTemp - 20
   }
 
   return (
-    <div className="container">
-      
-      <div style={{textAlign: "center", marginBottom: "10px"}}>
-  <div style={{
-    display: "inline-block",
-    background: "#FFE1D6",
-    padding: "12px 16px",
-    borderRadius: "999px",
-    fontSize: "22px"
-  }}>
-    🍟 FrySwap
+   <div className="container">
+
+  <div style={{ textAlign: "center", marginBottom: "14px" }}>
+    <div className="logoBadge">🍟 FrySwap</div>
   </div>
-</div>
+
 
       <p>Convert oven instructions into perfect air fryer settings</p>
 
