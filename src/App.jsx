@@ -1,3 +1,4 @@
+import Comparison from "./comparison";
 import Chart from "./chart";
 import { Routes, Route, Link } from "react-router-dom";
 import Guide from "./guide";
@@ -175,6 +176,11 @@ function App() {
             
             <div style={{ textAlign: "center", marginTop: "10px" }}>
   <Link to="/chart">View temperature chart</Link>
+
+  <div style={{ textAlign: "center", marginTop: "10px" }}>
+  <Link to="/oven-vs-air-fryer">Oven vs Air Fryer comparison</Link>
+</div>
+
 </div>
 
 
@@ -193,6 +199,8 @@ function App() {
 
       <Route path="/guide" element={<Guide />} />
       <Route path="/chart" element={<Chart />} />
+      <Route path="/oven-vs-air-fryer" element={<Comparison />} />
+
     </Routes>
   );
 }
