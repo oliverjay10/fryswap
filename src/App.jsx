@@ -101,11 +101,31 @@ let airTemp = ovenTemp - 20
    <div className="container">
 
   <div style={{ textAlign: "center", marginBottom: "14px" }}>
-    <div className="logoBadge">🍟 FrySwap</div>
+    <div className="logoBadge">🍟 Fryswap</div>
   </div>
 
 
-      <p>Convert oven instructions into perfect air fryer settings</p>
+     <h2 style={{
+  textAlign: "center",
+  marginTop: "8px",
+  marginBottom: "6px",
+  fontSize: "22px",
+  lineHeight: "1.3"
+}}>
+  Convert oven instructions to air fryer settings in seconds
+</h2>
+
+
+<p style={{
+  textAlign: "center",
+  marginTop: "0",
+  marginBottom: "14px",
+  color: "#666"
+}}>
+  A quick starting point with built-in timer and reminders.
+</p>
+
+
 
       {notice && <div className="notice">{notice}</div>}
 
@@ -126,9 +146,16 @@ let airTemp = ovenTemp - 20
 
       <button onClick={convert}>Convert!</button>
 
-      <h2>Air Fryer Result:</h2>
-      <p className="result">{result}</p>
+      {result !== "--" && (
+  <div className="resultCard">
+    <div className="resultTitle">Air Fryer Settings</div>
+    <div className="resultValue">{result}</div>
+    <div className="resultHint">Flip or shake halfway through</div>
+  </div>
+)}
+<br></br>
       <p style={{fontSize: "13px", color: "#666", textAlign: "center"}}>
+        <br></br>
   Air fryers vary by model — check food a few minutes early.
 </p>
 

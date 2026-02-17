@@ -1,14 +1,29 @@
-/* Make the app fill the full screen */
-html, body, #root {
-  height: 100%;
-  margin: 0;
+/* Reset */
+* {
+  box-sizing: border-box;
 }
 
-/* Center everything */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Background */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background: linear-gradient(180deg, #fff7f2 0%, #ffe8de 100%);
+}
+
+/* Root layout */
+#root {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
+
+/* Ensure app starts near top */
+.container {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
