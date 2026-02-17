@@ -144,6 +144,7 @@ function App() {
             </select>
 
             <button onClick={convert}>Convert!</button>
+            <br></br>
 
             {result !== "--" && (
               <div className="resultCard">
