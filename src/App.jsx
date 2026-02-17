@@ -1,3 +1,4 @@
+import Chart from "./chart";
 import { Routes, Route, Link } from "react-router-dom";
 import Guide from "./guide";
 import { useState, useRef } from "react";
@@ -171,6 +172,11 @@ function App() {
             <div style={{ textAlign: "center", marginTop: "20px" }}>
               <Link to="/guide">Read the conversion guide</Link>
             </div>
+            
+            <div style={{ textAlign: "center", marginTop: "10px" }}>
+  <Link to="/chart">View temperature chart</Link>
+</div>
+
 
             {timer && (
               <>
@@ -186,6 +192,7 @@ function App() {
       />
 
       <Route path="/guide" element={<Guide />} />
+      <Route path="/chart" element={<Chart />} />
     </Routes>
   );
 }

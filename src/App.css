@@ -200,3 +200,20 @@ button:active {
   line-height: 1.6;
   color: #555;
 }
+
+.chartTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.chartTable th,
+.chartTable td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.chartTable th {
+  background: #fafafa;
+}
