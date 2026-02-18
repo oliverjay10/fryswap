@@ -11,6 +11,7 @@ function App() {
   const [timer, setTimer] = useState(null);
   const [timeLeft, setTimeLeft] = useState(0);
   const [notice, setNotice] = useState("");
+  const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(null);
 
   function convert() {
@@ -48,11 +49,13 @@ function App() {
     setResult(`Temp: ${airTemp}°C, Time: ${airTime} minutes`);
     setTimer(airTime * 60);
     setTimeLeft(airTime * 60);
+    setIsRunning(false);
   }
 
   function startTimer() {
     if (!timer) return;
 
+    setIsRunning(true);
     let halfway = timer / 2;
 
     intervalRef.current = setInterval(() => {
@@ -67,6 +70,7 @@ function App() {
           clearInterval(intervalRef.current);
           playBeep();
           showNotice("Cooking complete 🎉");
+          setIsRunning(false);
           return 0;
         }
 
@@ -97,6 +101,8 @@ function App() {
     const s = seconds % 60;
     return `${m}:${s.toString().padStart(2, "0")}`;
   }
+
+  const progress = timer ? ((timer - timeLeft) / timer) * 100 : 0;
 
   return (
     <Routes>
@@ -155,6 +161,23 @@ function App() {
                 <div className="resultHint">Flip or shake halfway through</div>
               </div>
             )}
+
+            {/* ⭐ PROGRESS BAR ONLY WHEN TIMER RUNNING */}
+            {isRunning && (
+              <div style={{ marginTop: "12px" }}>
+                <div style={{ height: "8px", background: "#eee", borderRadius: "6px" }}>
+                  <div
+                    style={{
+                      width: `${progress}%`,
+                      height: "100%",
+                      background: "#ff6b3d",
+                      borderRadius: "6px",
+                      transition: "width 1s linear"
+                    }}
+                  />
+                </div>
+              </div>
+            )}
 <br></br>
             <p style={{ fontSize: "13px", color: "#666", textAlign: "center" }}>
               Air fryers vary by model — check food a few minutes early.
@@ -175,14 +198,11 @@ function App() {
             </div>
             
             <div style={{ textAlign: "center", marginTop: "10px" }}>
-  <Link to="/chart">View temperature chart</Link>
-
-  <div style={{ textAlign: "center", marginTop: "10px" }}>
-  <Link to="/oven-vs-air-fryer">Oven vs Air Fryer comparison</Link>
-</div>
-
-</div>
-
+              <Link to="/chart">View temperature chart</Link>
+              <div style={{ textAlign: "center", marginTop: "10px" }}>
+                <Link to="/oven-vs-air-fryer">Oven vs Air Fryer comparison</Link>
+              </div>
+            </div>
 
             {timer && (
               <>
